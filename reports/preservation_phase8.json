@@ -1,0 +1,17 @@
+{
+  "phase": "8",
+  "verified_at": "2026-11-08",
+  "database_version": 5,
+  "counts": {
+    "entreprises": 292,
+    "offres": 88,
+    "candidatures": 5
+  },
+  "integrity_check": "ok",
+  "external_collection_enabled": false,
+  "scheduled_collection_enabled": false,
+  "configured_career_boards": 0,
+  "real_offers_imported_phase8": 0,
+  "backup_file": "backups/avant_phase8_20261108_184635_644194.db",
+  "backup_sha256": "c493de1e46f39684449af0210f4c1232e79c8e4fe272096414f16481d0a5d868"
+}

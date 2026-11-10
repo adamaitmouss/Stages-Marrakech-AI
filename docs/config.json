@@ -1,0 +1,11 @@
+{
+    "ville": "Marrakech",
+    "pays": "Maroc",
+    "rayon_recherche": 15000,
+    "sources": [
+        "LinkedIn",
+        "ReKrute",
+        "Emploi.ma",
+        "Stagiaires.ma"
+    ]
+}

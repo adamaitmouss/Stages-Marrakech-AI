@@ -1,0 +1,5 @@
+.cv-live-preview{display:block;width:100%;height:min(82vh,980px);min-height:620px;border:1px solid var(--line);border-radius:10px;background:#f5f7fb}
+.suggestion{margin:12px 0;padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.suggestion .actions{margin-top:10px}
+@media(max-width:900px){.cv-live-preview{height:70vh;min-height:500px}}
+@media(max-width:600px){.cv-live-preview{height:65vh;min-height:430px}}

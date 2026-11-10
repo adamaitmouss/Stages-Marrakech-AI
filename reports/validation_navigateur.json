@@ -1,0 +1,25 @@
+{
+  "checks": [
+    "Accueil authentifié et statistiques réelles",
+    "Navigation entreprises",
+    "Navigation offres",
+    "Navigation candidatures",
+    "Navigation cv",
+    "Navigation matching",
+    "Navigation carte",
+    "Navigation analyses",
+    "Dash rendu et changement d’onglet",
+    "CV, sauvegarde et téléchargement PDF",
+    "Matching local sans clé",
+    "Postuler : CV et confirmation, sans envoi",
+    "Suivi actualisé",
+    "Carte locale, trois points fictifs séparés",
+    "XSS stockée rendue comme texte",
+    "Mobile 390 px, menu et clavier"
+  ],
+  "limitations": [
+    "Chrome automatisé : écriture du téléchargement refusée par Windows (Insufficient permissions). Événement de téléchargement et réponse HTTP PDF vérifiés ; sauvegarde de contrôle via client HTTP."
+  ],
+  "page_errors": [],
+  "external_requests": []
+}

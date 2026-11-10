@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: stages-marrakech-ai-demo
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements-production.txt
+    startCommand: gunicorn backend.wsgi:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 120 --access-logfile - --error-logfile -
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE
+        value: database/stages_marrakech_public_demo.db
+      - key: PRIVATE_DIR
+        value: /tmp/stages_marrakech_private
+      - key: BACKUP_DIR
+        value: /tmp/stages_marrakech_backups
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: TRUSTED_HOSTS
+        value: .onrender.com
+      - key: TRUST_PROXY
+        value: "true"
+      - key: PUBLIC_DEMO_MODE
+        value: "true"
+      - key: PUBLIC_DEMO_DATA_CONFIRMED
+        value: "true"
+      - key: GEMINI_ENABLED
+        value: "false"
+      - key: GEMINI_SEARCH_ENABLED
+        value: "false"
+      - key: SMTP_ENABLED
+        value: "false"
+      - key: MAPS_ENABLED
+        value: "false"

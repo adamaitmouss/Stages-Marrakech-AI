@@ -1,0 +1,45 @@
+{
+  "before_counts": {
+    "entreprises": 292,
+    "offres": 88,
+    "candidatures": 5,
+    "cvs": 0
+  },
+  "after_counts": {
+    "entreprises": 292,
+    "offres": 88,
+    "candidatures": 5,
+    "cvs": 0
+  },
+  "sqlite_integrity": "ok",
+  "sqlite_tables_identical_to_pre_phase3_backup": true,
+  "table_comparison": {
+    "candidature_history": {
+      "rows": 5,
+      "identical_to_backup": true
+    },
+    "candidatures": {
+      "rows": 5,
+      "identical_to_backup": true
+    },
+    "cvs": {
+      "rows": 0,
+      "identical_to_backup": true
+    },
+    "entreprises": {
+      "rows": 292,
+      "identical_to_backup": true
+    },
+    "offres": {
+      "rows": 88,
+      "identical_to_backup": true
+    },
+    "send_attempts": {
+      "rows": 0,
+      "identical_to_backup": true
+    }
+  },
+  "historical_pdf_count": 1,
+  "historical_pdfs_byte_identical_to_phase2": true,
+  "geo_verified_count": 0
+}

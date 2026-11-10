@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-03",
+  "automated_tests": {
+    "passed": 56,
+    "failed": 0,
+    "warnings": 2,
+    "warnings_note": "Warnings from third-party anyio/Dash plugins about pytest 10."
+  },
+  "javascript_syntax": "passed",
+  "sqlite_integrity": "ok",
+  "business_data_preservation": {
+    "tables": {
+      "entreprises": {
+        "rows": 292,
+        "historical_columns_compared": 7,
+        "original_values_preserved": true
+      },
+      "offres": {
+        "rows": 88,
+        "historical_columns_compared": 10,
+        "original_values_preserved": true
+      },
+      "candidatures": {
+        "rows": 5,
+        "historical_columns_compared": 8,
+        "original_values_preserved": true
+      }
+    },
+    "integrity": "ok",
+    "business_rows_preserved": true,
+    "expected_counts": {
+      "entreprises": 292,
+      "offres": 88,
+      "candidatures": 5
+    }
+  },
+  "browser": {
+    "previous_delivery_checks": 16,
+    "previous_delivery_page_errors": 0,
+    "previous_delivery_external_requests": 0,
+    "phase2_optimizer_ui_retest": "not completed",
+    "reason": "Playwright driver stalled at sync_playwright().start() before Chromium launch."
+  },
+  "external_live_calls": 0,
+  "notes": [
+    "Gemini, SMTP, Maps and data collection were not called live.",
+    "Chrome native download permission limitation is recorded in reports/validation_navigateur.json."
+  ]
+}

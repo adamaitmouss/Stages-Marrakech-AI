@@ -1,0 +1,14 @@
+{
+  "counts_before": {
+    "entreprises": 292,
+    "offres": 88,
+    "candidatures": 5
+  },
+  "counts_after": {
+    "entreprises": 292,
+    "offres": 88,
+    "candidatures": 5
+  },
+  "legacy_applications_identical": true,
+  "integrity": "ok"
+}

@@ -1,0 +1,117 @@
+{
+  "date": "2026-11-05",
+  "phase3_archive": {
+    "available": true,
+    "entries": 98,
+    "manifest_entries": 97,
+    "hashes_matching": 97,
+    "zip_integrity": "ok",
+    "required_files_at_project_root": true
+  },
+  "desktop_copy": {
+    "folder_exists": true,
+    "requirements.txt": false,
+    ".env.example": false,
+    "backend/app.py": true,
+    "phase3_manifest": false,
+    "assessment": "incomplete or older project copy; not modified"
+  },
+  "python": {
+    "version": "3.12.2",
+    "project_virtual_environment": true,
+    "global_python_modified": false,
+    "pip_check": "no broken requirements found"
+  },
+  "tests": {
+    "phase3_baseline_passed": 63,
+    "phase4_passed": 67,
+    "failed": 0,
+    "warnings": 1,
+    "warning_source": "Dash pytest plugin uses an old-style hook; pytest deprecation warning."
+  },
+  "installer_batch": {
+    "tested": true,
+    "python_launcher_fallback": true,
+    "existing_env_preserved": true,
+    "internet_refusal_path_exit_code": 0,
+    "dependency_installation_tested_separately_in_venv": true
+  },
+  "verifier_batch": {
+    "tested": true,
+    "exit_code": 0,
+    "sqlite_mode": "read-only"
+  },
+  "browser": {
+    "passed_checks": 17,
+    "page_errors": 0,
+    "external_requests": 0,
+    "screenshots": "reports/screenshots_phase4/",
+    "checked": [
+      "authenticated home and historical counts",
+      "navigation across seven pages",
+      "Dash render and tab callback",
+      "CV optimization view",
+      "CV save and PDF HTTP download",
+      "local matching",
+      "prepare application and follow-up",
+      "local demo map",
+      "stored XSS is rendered as text",
+      "mobile width 390px and keyboard navigation"
+    ],
+    "limitations": [
+      "Windows denied native Chrome automated file write (Insufficient permissions); the PDF HTTP body was checked separately.",
+      "PDF inline viewer response was HTTP 200, but headless screenshot does not prove visual rendering."
+    ]
+  },
+  "database_preservation": {
+    "database_tables_identical": true,
+    "changed_tables": [],
+    "before_counts": {
+      "entreprises": 292,
+      "offres": 88,
+      "candidatures": 5
+    },
+    "after_counts": {
+      "entreprises": 292,
+      "offres": 88,
+      "candidatures": 5
+    },
+    "integrity_before": "ok",
+    "integrity_after": "ok",
+    "historical_pdf_count": 1,
+    "historical_pdfs_byte_identical_to_pre_phase4_backup": true
+  },
+  "dependencies": {
+    "installed_in_project_venv": true,
+    "packages": [
+      "Flask 3.1.3",
+      "Werkzeug 3.1.8",
+      "Dash 4.4.1",
+      "Plotly 7.1.0",
+      "Pandas 3.0.1",
+      "ReportLab 5.0.1",
+      "OpenPyXL 3.1.5",
+      "Requests 2.34.2",
+      "Beautiful Soup 4.15.0",
+      "Matplotlib 3.10.8",
+      "pypdf 6.21.4",
+      "Cryptography 50.0.2",
+      "python-dotenv 1.2.4",
+      "Google GenAI 2.34.0",
+      "pytest 9.2.0",
+      "Playwright 1.64.1"
+    ]
+  },
+  "external_services": {
+    "gemini_real_calls": 0,
+    "smtp_real_sends": 0,
+    "maps_places_calls": 0,
+    "collectors_real_calls": 0,
+    "maps_verified_coordinates": 0
+  },
+  "known_limits": [
+    "Gemini, SMTP and Google Maps/Places remain unconfigured and were not tested with real accounts.",
+    "Check PDF inline view in a normal Chrome/Edge window and review dark theme at 768px and 1366px.",
+    "Matching has not been evaluated against an annotated ground-truth dataset."
+  ]
+}

@@ -1,0 +1,63 @@
+import sys
+import os
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from scripts.common import prepare
+import pandas as pd
+
+def main():
+    prepare(external=False)
+    fichier_entreprises = 'data_clean/entreprises_marrakech_clean.xlsx'
+    fichier_offres = 'data_clean/offres_stagiaires_marrakech_clean.xlsx'
+    df_entreprises = pd.read_excel(fichier_entreprises)
+    df_offres = pd.read_excel(fichier_offres)
+    print('\n======================================')
+    print('1. ENTREPRISES PAR SECTEUR')
+    print('======================================')
+    entreprises_secteur = df_entreprises['Secteur'].value_counts()
+    print(entreprises_secteur)
+    print('\n======================================')
+    print('2. OFFRES PAR TYPE DE STAGE')
+    print('======================================')
+    offres_type_stage = df_offres['Type stage'].fillna('Non renseigné').value_counts()
+    print(offres_type_stage)
+    print('\n======================================')
+    print('3. OFFRES PAR TYPE DE CONTRAT')
+    print('======================================')
+    offres_type_contrat = df_offres['Type contrat'].value_counts()
+    print(offres_type_contrat)
+    print('\n======================================')
+    print("4. ENTREPRISES AVEC LE PLUS D'OFFRES")
+    print('======================================')
+    offres_entreprise = df_offres['Entreprise ID'].value_counts().head(10)
+    print(offres_entreprise)
+    print('\n======================================')
+    print('5. OFFRES PAR DATE DE PUBLICATION')
+    print('======================================')
+    df_offres['Date publication'] = pd.to_datetime(df_offres['Date publication'], errors='coerce')
+    offres_par_date = df_offres['Date publication'].dt.date.value_counts().sort_index()
+    print(offres_par_date)
+    print('\n======================================')
+    print('6. ENTREPRISES AVEC EMAIL / SITE WEB')
+    print('======================================')
+    avec_email = df_entreprises['Emails'].notna().sum()
+    sans_email = df_entreprises['Emails'].isna().sum()
+    avec_site = df_entreprises['Site Web'].notna().sum()
+    sans_site = df_entreprises['Site Web'].isna().sum()
+    print('Avec Email :', avec_email)
+    print('Sans Email :', sans_email)
+    print('Avec Site Web :', avec_site)
+    print('Sans Site Web :', sans_site)
+    print('\n======================================')
+    print('RÉSUMÉ GLOBAL')
+    print('======================================')
+    print("Nombre d'entreprises :", len(df_entreprises))
+    print("Nombre d'offres :", len(df_offres))
+    print('Nombre de secteurs :', df_entreprises['Secteur'].nunique())
+    print("Nombre d'entreprises présentes dans les offres :", df_offres['Entreprise ID'].nunique())
+    print('\n======================================')
+    print('✅ ANALYSE EXPLORATOIRE TERMINÉE')
+    print('======================================')
+
+if __name__ == "__main__":
+    main()

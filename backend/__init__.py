@@ -1,0 +1,1 @@
+"""Application Stages Marrakech."""

@@ -1,0 +1,13 @@
+{
+  "timestamp": "20261106_135417",
+  "counts": {
+    "entreprises": 292,
+    "offres": 88,
+    "candidatures": 5,
+    "cvs": 0
+  },
+  "user_version": 3,
+  "integrity_check": "ok",
+  "backup": "backups\\avant_phase6_20261106_135417.db",
+  "backup_sha256": "ef9bd730968e081e187ac31ab2dd30384b04dc9911a8443796b7d1b08f4a3df9"
+}

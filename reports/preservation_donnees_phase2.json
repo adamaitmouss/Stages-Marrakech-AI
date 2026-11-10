@@ -1,0 +1,26 @@
+{
+  "tables": {
+    "entreprises": {
+      "rows": 292,
+      "historical_columns_compared": 7,
+      "original_values_preserved": true
+    },
+    "offres": {
+      "rows": 88,
+      "historical_columns_compared": 10,
+      "original_values_preserved": true
+    },
+    "candidatures": {
+      "rows": 5,
+      "historical_columns_compared": 8,
+      "original_values_preserved": true
+    }
+  },
+  "integrity": "ok",
+  "business_rows_preserved": true,
+  "expected_counts": {
+    "entreprises": 292,
+    "offres": 88,
+    "candidatures": 5
+  }
+}

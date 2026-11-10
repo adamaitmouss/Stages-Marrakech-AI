@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>{% block title %}Stages Marrakech AI{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+  <script defer src="{{ url_for('static', filename='auth.js') }}"></script>
+</head>
+<body>
+  <main class="page-shell">
+    <a class="brand" href="/login" aria-label="Stages Marrakech AI, accueil connexion">
+      <span class="brand-mark" aria-hidden="true">SM</span>
+      <span><strong>Stages Marrakech AI</strong><small>Votre parcours professionnel commence ici</small></span>
+    </a>
+    {% block content %}{% endblock %}
+    <footer class="site-footer">Accès sécurisé · Session protégée</footer>
+  </main>
+</body>
+</html>

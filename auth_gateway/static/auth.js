@@ -1,0 +1,5 @@
+(()=>{'use strict';
+ document.querySelectorAll('[data-toggle-password]').forEach(button=>button.addEventListener('click',()=>{const input=document.getElementById(button.dataset.togglePassword);if(!input)return;const shown=input.type==='password';input.type=shown?'text':'password';button.textContent=shown?'Masquer':'Afficher';button.setAttribute('aria-label',shown?'Masquer le mot de passe':'Afficher le mot de passe');input.focus()}));
+ const form=document.querySelector('[data-register-form]');if(form){form.addEventListener('submit',event=>{const password=form.querySelector('#password'),confirm=form.querySelector('#confirm_password');if(password.value!==confirm.value){event.preventDefault();confirm.setCustomValidity('La confirmation ne correspond pas.');confirm.reportValidity();return}confirm.setCustomValidity('')})}
+ document.querySelectorAll('[data-auth-form]').forEach(form=>form.addEventListener('submit',()=>{const button=form.querySelector('button[type="submit"]');if(button){button.disabled=true;button.classList.add('is-loading')}}));
+})();

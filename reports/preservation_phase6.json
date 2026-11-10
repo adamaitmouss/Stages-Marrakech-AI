@@ -1,0 +1,17 @@
+{
+  "timestamp": "20261106_144814",
+  "database": "database\\stages_marrakech.db",
+  "counts": {
+    "entreprises": 292,
+    "offres": 88,
+    "candidatures": 5,
+    "cvs": 0
+  },
+  "user_version": 4,
+  "integrity_check": "ok",
+  "collector_runs": 0,
+  "offer_source_identity": 0,
+  "collection_settings": {},
+  "pre_migration_backup": "backups\\avant_phase5_migration_20261106_144721_600590.db",
+  "pre_migration_backup_sha256": "ef9bd730968e081e187ac31ab2dd30384b04dc9911a8443796b7d1b08f4a3df9"
+}

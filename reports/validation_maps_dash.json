@@ -1,0 +1,204 @@
+{
+  "date": "2026-11-06",
+  "scope": "Correction prioritaire carte Leaflet/OpenStreetMap et navigation Dash",
+  "unit_tests": {
+    "passed": 72,
+    "failed": 0,
+    "warnings": 1,
+    "warning": "Avertissement de dépréciation du plugin Dash pytest."
+  },
+  "browser": {
+    "passed_checks": 20,
+    "checks": [
+      "Accueil authentifié et statistiques réelles",
+      "Navigation entreprises",
+      "Navigation offres",
+      "Navigation candidatures",
+      "Navigation cv",
+      "Navigation matching",
+      "Navigation carte",
+      "Navigation analyses",
+      "Dash → Flask → Accueil répété 3 fois, URL et session conservées, une sidebar, un header, aucun iframe",
+      "Dash rendu et changement d’onglet",
+      "Conseils CV localisés sur une offre réelle de la base, sans modification du CV",
+      "CV, sauvegarde et téléchargement PDF",
+      "Matching local sans clé",
+      "Postuler : CV et confirmation, sans envoi",
+      "Suivi actualisé",
+      "Leaflet/OSM, attribution, filtres, fiche, itinéraire et marqueurs réels de fixture/fictifs séparés",
+      "Carte Marrakech toujours visible avec zéro coordonnée géolocalisée",
+      "Message explicite lorsque le service de tuiles est indisponible",
+      "XSS stockée rendue comme texte",
+      "Mobile 390 px, menu et clavier"
+    ],
+    "page_errors": [],
+    "external_requests": [],
+    "openstreetmap_tile_requests": 60,
+    "openstreetmap_tile_responses": [
+      {
+        "url": "https://tile.openstreetmap.org/14/7828/6673.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/12/1957/1668.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7828/6673.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7828/6672.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7827/6673.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7829/6673.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7828/6674.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7827/6672.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7829/6672.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7827/6674.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7829/6674.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7826/6673.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7830/6673.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7826/6672.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7830/6672.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7826/6674.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7830/6674.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7827/6671.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7826/6671.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7828/6671.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7825/6672.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7825/6671.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7829/6671.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7825/6673.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/14/7825/6674.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/12/1957/1668.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/12/1959/1668.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/12/1959/1669.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/12/1958/1668.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/12/1960/1668.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/12/1958/1669.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/12/1960/1669.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/12/1961/1668.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/12/1957/1669.png",
+        "status": 200
+      },
+      {
+        "url": "https://tile.openstreetmap.org/12/1961/1669.png",
+        "status": 200
+      }
+    ],
+    "limitations": [
+      "Chrome automatisé : écriture du téléchargement refusée par Windows (Insufficient permissions). Événement de téléchargement et réponse HTTP PDF vérifiés ; sauvegarde de contrôle via client HTTP."
+    ],
+    "screenshots": "reports/screenshots_maps_dash/"
+  },
+  "database": {
+    "integrity": "ok",
+    "tables_identical_to_prechange_backup": true,
+    "entreprises": 292,
+    "offres": 88,
+    "candidatures": 5,
+    "verified_coordinates": 0,
+    "latitude_or_longitude_present": 0,
+    "sqlite_migrations_needed": false
+  },
+  "excel_audit": {
+    "workbooks_examined": 9,
+    "geographic_coordinate_headers_found": 0
+  },
+  "external_services": {
+    "google_maps_or_places_calls": 0,
+    "gemini_calls": 0,
+    "smtp_sends": 0
+  },
+  "cause_dash": "Lien sans target naviguait dans l’iframe; target=_top renvoie dans la fenêtre principale."
+}

@@ -1,0 +1,18 @@
+{
+  "database_tables_identical": true,
+  "changed_tables": [],
+  "before_counts": {
+    "entreprises": 292,
+    "offres": 88,
+    "candidatures": 5
+  },
+  "after_counts": {
+    "entreprises": 292,
+    "offres": 88,
+    "candidatures": 5
+  },
+  "integrity_before": "ok",
+  "integrity_after": "ok",
+  "historical_pdf_count": 1,
+  "historical_pdfs_byte_identical_to_pre_phase4_backup": true
+}

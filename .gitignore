@@ -1,0 +1,17 @@
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+private/
+backups/
+*.db
+*.db-*
+!database/stages_marrakech_public_demo.db
+backend/uploads/
+backend/generated_cv/
+data_raw/
+data_clean/
+test-results/
+*.log

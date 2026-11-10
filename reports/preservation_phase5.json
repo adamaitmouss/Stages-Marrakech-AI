@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-06",
+  "database": "database/stages_marrakech.db",
+  "counts": {
+    "entreprises": 292,
+    "offres": 88,
+    "candidatures": 5
+  },
+  "user_version": 3,
+  "integrity_check": "ok",
+  "source_imports_during_phase5_validation": 0,
+  "backups": [
+    "backups/avant_phase5_20261106_123918.db",
+    "backups/avant_phase5_migration_20261106_134224_561380.db"
+  ]
+}

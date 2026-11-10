@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-06",
+  "database": "database/stages_marrakech.db",
+  "before_migration": {
+    "user_version": 4,
+    "integrity_check": "ok",
+    "counts": {
+      "entreprises": 292,
+      "offres": 88,
+      "candidatures": 5,
+      "cvs": 0
+    },
+    "collector_runs": 0,
+    "offer_source_identity": 0
+  },
+  "after_migration": {
+    "user_version": 5,
+    "integrity_check": "ok",
+    "counts": {
+      "entreprises": 292,
+      "offres": 88,
+      "candidatures": 5,
+      "cvs": 0
+    },
+    "collector_runs": 0,
+    "offer_source_identity": 0
+  },
+  "backup": "backups/avant_phase7_migration_20261106_151714_109334.db",
+  "backup_sha256": "8dbb807cd4e07776a8feebe518a7645030f092e2a86930451b5dda903050729f",
+  "real_offers_imported_phase7": 0,
+  "external_requests_phase7": 0,
+  "automation_enabled": false
+}

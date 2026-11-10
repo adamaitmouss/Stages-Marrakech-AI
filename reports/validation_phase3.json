@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-03",
+  "python_tests": {
+    "passed": 63,
+    "failed": 0,
+    "warnings": 2,
+    "warnings_source": "Third-party anyio and Dash pytest plugin deprecation warnings."
+  },
+  "javascript_syntax": {
+    "dashboard/js/ui.js": "passed",
+    "dashboard/js/app.js": "passed"
+  },
+  "http_and_dash": "Covered through Flask test client routes and Dash callbacks.",
+  "pdf": "Both templates and authenticated preview endpoint passed tests.",
+  "database_preservation": {
+    "before_counts": {
+      "entreprises": 292,
+      "offres": 88,
+      "candidatures": 5,
+      "cvs": 0
+    },
+    "after_counts": {
+      "entreprises": 292,
+      "offres": 88,
+      "candidatures": 5,
+      "cvs": 0
+    },
+    "sqlite_integrity": "ok",
+    "sqlite_tables_identical_to_pre_phase3_backup": true,
+    "table_comparison": {
+      "candidature_history": {
+        "rows": 5,
+        "identical_to_backup": true
+      },
+      "candidatures": {
+        "rows": 5,
+        "identical_to_backup": true
+      },
+      "cvs": {
+        "rows": 0,
+        "identical_to_backup": true
+      },
+      "entreprises": {
+        "rows": 292,
+        "identical_to_backup": true
+      },
+      "offres": {
+        "rows": 88,
+        "identical_to_backup": true
+      },
+      "send_attempts": {
+        "rows": 0,
+        "identical_to_backup": true
+      }
+    },
+    "historical_pdf_count": 1,
+    "historical_pdfs_byte_identical_to_phase2": true,
+    "geo_verified_count": 0
+  },
+  "external_calls": 0,
+  "browser_visual_tests": {
+    "phase3": "not run",
+    "reason": "Explicitly avoided browser dependence per Phase 3 reprise request; prior Windows browser helper errors remain documented."
+  },
+  "known_limits": [
+    "New PDF iframe and accept/ignore UI actions require manual visual verification.",
+    "Gemini, SMTP, Maps/Places and collectors were mocked or left uncalled."
+  ]
+}

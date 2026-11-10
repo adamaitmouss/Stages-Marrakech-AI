@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Créer un compte — Stages Marrakech AI{% endblock %}
+{% block content %}
+<section class="auth-card auth-card-wide" aria-labelledby="page-title">
+  <div class="eyebrow">NOUVEAU COMPTE</div>
+  <h1 id="page-title">Créer mon compte</h1>
+  <p class="intro">Quelques informations suffisent pour commencer.</p>
+  {% if config.AUTH_PROFILE == 'multi_user' %}<div class="notice notice-info" role="note">Votre espace personnel est stocké dans une base SQLite distincte. Les candidatures historiques ne sont pas copiées dans votre compte.</div>{% endif %}
+  {% if error %}<div class="notice notice-error" role="alert">{{ error }}</div>{% endif %}
+  <form method="post" action="/register" data-auth-form data-register-form>
+    <input type="hidden" name="csrf_token" value="{{ csrf }}">
+    <div class="form-grid">
+      <div><label for="first_name">Prénom</label><input id="first_name" name="first_name" autocomplete="given-name" maxlength="80" required value="{{ first_name|default('') }}"></div>
+      <div><label for="last_name">Nom</label><input id="last_name" name="last_name" autocomplete="family-name" maxlength="80" required value="{{ last_name|default('') }}"></div>
+    </div>
+    <label for="email">Adresse email</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required value="{{ email|default('') }}">
+    <label for="password">Mot de passe</label>
+    <div class="password-field"><input id="password" name="password" type="password" autocomplete="new-password" minlength="12" maxlength="128" required aria-describedby="password-help"><button type="button" class="reveal" data-toggle-password="password" aria-label="Afficher le mot de passe">Afficher</button></div>
+    <small id="password-help" class="field-help">12 caractères minimum, avec au moins une lettre et un chiffre.</small>
+    <label for="confirm_password">Confirmer le mot de passe</label>
+    <div class="password-field"><input id="confirm_password" name="confirm_password" type="password" autocomplete="new-password" minlength="12" maxlength="128" required><button type="button" class="reveal" data-toggle-password="confirm_password" aria-label="Afficher la confirmation">Afficher</button></div>
+    <button class="primary-button" type="submit"><span data-submit-label>Créer mon compte</span><span class="spinner" aria-hidden="true"></span></button>
+  </form>
+  <p class="switch-link">Vous avez déjà un compte ? <a href="/login">Se connecter</a></p>
+</section>
+{% endblock %}
