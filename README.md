@@ -139,8 +139,3 @@ La présentation de 45 diapositives a été exportée puis inspectée sur ses re
 
 Espace personnel local, pas une plateforme multiutilisateur déployée. Les CV PDF visent le français/latin ; mise en page arabe RTL et OCR non intégrés. Le modèle ATS est textuel à une colonne, sans garantie sur tous les logiciels ATS. SMTP/Maps/Gemini n’ont pas été appelés en réel et le matching n’est pas évalué sur un corpus annoté. Consultez `docs/RAPPORT_VALIDATION_DEFINITIVE.md` pour les résultats mesurés et limites restantes.
 
-## Dossier final de soutenance OFPPT
-
-Les documents créés pour la copie de soutenance se trouvent dans `docs/` : état des données, base SQLite, architecture, sources autorisées, ETL, guide de code avec index fichier/ligne, script oral, questions du jury, lancement, validation, nettoyage et checklist. Ouvrez d'abord `docs/GUIDE_LANCEMENT_SOUTENANCE.md` et `docs/RAPPORT_VALIDATION_DEFINITIVE.md`.
-
-La base locale contient des candidatures personnelles et ne doit pas être publiée. La passerelle Login ne cloisonne pas les CV et candidatures par utilisateur. Pour publication, utilisez uniquement l'archive synthétique séparée, après revue du manifeste public.
