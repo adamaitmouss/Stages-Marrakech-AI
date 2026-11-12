@@ -26,22 +26,37 @@ def create_app(overrides=None):
     if app.config.get('PUBLIC_DEMO_MODE'):
         if not app.config.get('PUBLIC_DEMO_DATA_CONFIRMED'):
             raise RuntimeError('Le mode public exige l’attestation d’un jeu synthétique.')
-        db_uri=Path(app.config['DATABASE']).resolve().as_uri()+'?mode=ro'
+        database = Path(app.config['DATABASE']).resolve()
+        if not database.is_file():
+            raise RuntimeError(f'Base publique absente au chemin attendu : {database}')
+        db_uri = database.as_uri() + '?mode=ro'
         try:
             check=sqlite3.connect(db_uri,uri=True)
+            integrity=check.execute('PRAGMA integrity_check').fetchone()[0]
+            tables={row[0] for row in check.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+            if not {'entreprises','offres','deployment_metadata'}.issubset(tables):
+                raise RuntimeError('Base refusée en mode public : jeu synthétique incomplet.')
             marker=check.execute("SELECT value FROM deployment_metadata WHERE key='dataset_type'").fetchone()
+            company_count=check.execute('SELECT COUNT(*) FROM entreprises').fetchone()[0]
+            offer_count=check.execute('SELECT COUNT(*) FROM offres').fetchone()[0]
+            version=check.execute('PRAGMA user_version').fetchone()[0]
             check.close()
         except sqlite3.Error as exc:
-            raise RuntimeError('La base publique doit porter le marqueur de données synthétiques.') from exc
+            raise RuntimeError(f'Base publique SQLite illisible ou incomplète : {database}') from exc
+        if integrity != 'ok' or version < 6:
+            raise RuntimeError(f'Base publique invalide (intégrité/version) : {database}')
         if not marker or marker[0]!='synthetic_public_demo':
             raise RuntimeError('Base refusée en mode public : les données doivent être synthétiques.')
+        app.logger.info('Profil public démonstration | SQLite=%s | intégrité=%s | entreprises=%s | offres=%s',
+                        database, integrity, company_count, offer_count)
     vault = Vault(app.config['PRIVATE_DIR'])
     app.secret_key = vault.session_key
     app.extensions['vault'] = vault
-    migrate(app.config['DATABASE'], app.config['BACKUP_DIR'])
-    migrate_phase5(app.config['DATABASE'], app.config['BACKUP_DIR'])
-    migrate_phase7(app.config['DATABASE'], app.config['BACKUP_DIR'])
-    migrate_phase9(app.config['DATABASE'], app.config['BACKUP_DIR'])
+    if not app.config.get('PUBLIC_DEMO_MODE'):
+        migrate(app.config['DATABASE'], app.config['BACKUP_DIR'])
+        migrate_phase5(app.config['DATABASE'], app.config['BACKUP_DIR'])
+        migrate_phase7(app.config['DATABASE'], app.config['BACKUP_DIR'])
+        migrate_phase9(app.config['DATABASE'], app.config['BACKUP_DIR'])
     app.extensions['gemini_search_jobs']={}
     with connect(app.config['DATABASE']) as db:
         if not app.config.get('PUBLIC_DEMO_MODE') and not app.config.get('MULTI_USER_MODE'):

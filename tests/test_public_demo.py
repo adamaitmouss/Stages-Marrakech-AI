@@ -58,3 +58,13 @@ def test_public_mode_requires_explicit_data_attestation(tmp_path):
         create_app({'DATABASE':str(tmp_path/'missing.db'),'PRIVATE_DIR':str(tmp_path/'private'),
             'BACKUP_DIR':str(tmp_path/'backups'),'PUBLIC_DEMO_MODE':True,
             'PUBLIC_DEMO_DATA_CONFIRMED':False})
+
+
+def test_public_mode_refuses_missing_database_without_creating_it(tmp_path):
+    from backend.web import create_app
+    database=tmp_path/'missing.db'
+    with pytest.raises(RuntimeError,match='Base publique absente'):
+        create_app({'DATABASE':str(database),'PRIVATE_DIR':str(tmp_path/'private'),
+            'BACKUP_DIR':str(tmp_path/'backups'),'PUBLIC_DEMO_MODE':True,
+            'PUBLIC_DEMO_DATA_CONFIRMED':True})
+    assert not database.exists()

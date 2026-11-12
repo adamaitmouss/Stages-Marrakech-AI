@@ -42,7 +42,17 @@ def backup_database(path, backup_dir, label='avant_import'):
 
 @contextmanager
 def connect(path):
-    con = sqlite3.connect(path, timeout=15)
+    readonly = False
+    try:
+        from flask import current_app, has_app_context
+        if has_app_context() and current_app.config.get('PUBLIC_DEMO_MODE'):
+            readonly = Path(path).resolve() == Path(current_app.config['DATABASE']).resolve()
+    except (ImportError, RuntimeError, KeyError):
+        pass
+    if readonly:
+        con = sqlite3.connect(Path(path).resolve().as_uri() + '?mode=ro', uri=True, timeout=15)
+    else:
+        con = sqlite3.connect(path, timeout=15)
     con.row_factory = sqlite3.Row
     con.execute('PRAGMA foreign_keys=ON')
     try:
